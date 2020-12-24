@@ -8,6 +8,13 @@ use App\Models\Item;
 
 class ItemsController extends Controller
 {
+    public function index()
+    {
+        $items = Item::orderBy('name', 'asc')->get();
+
+        return view('/home-page', compact('items'));
+    }
+
     public function create()
     {
         return view('items.create');

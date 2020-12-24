@@ -10,4 +10,8 @@ class Item extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'description', 'is_available'];
+
+    // public static function available() {
+    //     return self::where('is_available', true);
+    // }
 }
