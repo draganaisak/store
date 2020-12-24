@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ItemsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,10 @@ use App\Http\Controllers\AuthController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/item/create', [ItemsController::class, 'create']);
+Route::post('/item/create', [ItemsController::class, 'store']);
+
 Route::get('/register', [AuthController::class, 'getRegisterForm']);
 Route::post('/register', [AuthController::class, 'register']);
 Route::get('/login', [AuthController::class, 'getLoginForm']);
