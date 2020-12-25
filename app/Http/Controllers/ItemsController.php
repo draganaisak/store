@@ -37,8 +37,8 @@ class ItemsController extends Controller
         return redirect('/');
     }
 
-    public function show(Item $item, Tag $tag)
+    public function show(Item $item)
     {
-        return view('items.show', compact('item', 'tag'));
+        return view('items.show', compact('item'));
     }
 }

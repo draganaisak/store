@@ -4,7 +4,9 @@
 
 @section('content')
     <h1>{{$item->name}}</h1>
-    <h3>{{$item->description}}</h3>
+    <hr>
+    <h6>Description:</h3>
+    <p>{{$item->description}}</p>
     <ul> Section:
         @foreach($item->tags as $tag)
             <li>{{$tag->name}}</li>
