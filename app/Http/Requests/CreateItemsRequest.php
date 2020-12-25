@@ -26,7 +26,7 @@ class CreateItemsRequest extends FormRequest
         return [
             'name' => 'required|string|max:255',
             'description' => 'required|string|max:255',
-            'is_available' => 'required|string|max:255'
+            'is_available' => 'boolean'
         ];
     }
 }

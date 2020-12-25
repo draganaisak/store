@@ -18,11 +18,14 @@ use App\Http\Controllers\TagsController;
 
 Route::get('/', [ItemsController::class, 'index']);
 
-Route::get('/item/create', [ItemsController::class, 'create']);
-Route::post('/item/create', [ItemsController::class, 'store']);
+Route::get('/items/create', [ItemsController::class, 'create'])->middleware('auth');
+Route::post('/items/create', [ItemsController::class, 'store'])->middleware('auth');
+Route::get('/items/{item}', [ItemsController::class, 'show'])->name('items.show')->middleware('auth');
 
-Route::get('/tag/create', [TagsController::class, 'create']);
-Route::post('/tag/create', [TagsController::class, 'store']);
+Route::get('/tags/create', [TagsController::class, 'create'])->middleware('auth');
+Route::post('/tags/create', [TagsController::class, 'store'])->middleware('auth');
+
+Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth');
 
 Route::get('/register', [AuthController::class, 'getRegisterForm']);
 Route::post('/register', [AuthController::class, 'register']);

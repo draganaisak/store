@@ -17,7 +17,7 @@ class CreateItemsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
-            $table->string('is_available');
+            $table->boolean('is_available')->default(false);
             $table->timestamps();
         });
     }

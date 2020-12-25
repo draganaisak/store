@@ -7,19 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 
 /**
- * Item
+ * Tag
  *
  * @mixin Builder
  */
-
-class Item extends Model
+class Tag extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description', 'is_available'];
+    protected $fillable = ['name'];
 
-    public function tags()
+    public function items()
     {
-        return $this->belongsToMany(Tag::class);
+        return $this->belongsToMany(Item::class);
     }
 }

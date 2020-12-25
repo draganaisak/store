@@ -45,4 +45,9 @@ class AuthController extends Controller
             'email' => 'Incorrect email or password'
         ]);
     }
+
+    public function logout() {
+        auth()->logout();
+        return redirect('/login');
+    }
 }
